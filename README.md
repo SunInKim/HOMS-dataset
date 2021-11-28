@@ -1,10 +1,12 @@
 # HOMS-dataset
 Robot manipulation task data for offline reinforcement learning especially for the hierarchical object manipulation system (HOMS)
-source code link : --
-
-The dataset is composed of a dataset for high policy (task classifier) and a dataset for low policy (robot controller).
 
 HOMS is a system for performing multi-tasks procedurally.
+
+source code link : --
+
+
+The dataset is composed of a dataset for high policy (task classifier) and a dataset for low policy (robot controller).
 
 ------------
 1. Laptop close     
