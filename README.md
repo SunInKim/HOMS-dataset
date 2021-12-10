@@ -1,5 +1,5 @@
 # HOMS-dataset
-Robot manipulation task data for offline reinforcement learning especially for the hierarchical object manipulation system (HOMS)
+Robot manipulation task data for offline reinforcement learning (Offline RL) especially for the hierarchical object manipulation system (HOMS)
 
 HOMS is a system for performing multi-tasks procedurally.
 
@@ -31,12 +31,13 @@ Each rollout contains 100 episodes of unit task.
 ### Structure
 ```
 rollout
---observations
---actions
---rewards
---next_observations
---terminals
---possible_actions
+--episode
+  --observations
+  --actions
+  --rewards
+  --next_observations
+  --terminals
+  --possible_actions
 ```
 ### Data shape
 ```
@@ -52,21 +53,24 @@ possible_actions: # N is num_possible_action  (N,)
 ### Structure
 ```
 rollout
---observations # current_image (3, 240, 240), robot_state (6,), task_id (10,)
---actions # robot_action (x,y,z,yaw,gripper,task_terminal) (6,)
---rewards # get 1 for completing the task and returning to the initial position.  (1,)
---next_observations # current_image (3, 240, 240), robot_state (6,), task_id (10,)
---terminals # get done for completing the task and returning to the initial position.  (1,)
---tasks # one-hot vector which indicates the type of task (10,)
+--episode
+  --observations 
+    --images
+    --robot_state
+  --actions 
+  --rewards 
+  --next_observations 
+  --terminals 
+  --tasks 
 ```
 ### Data shape
 ```
-observations: (3, 240, 240) # current_image
-actions: (6,) # (x,y,z,yaw,grip,task_end)
-rewards: (1,) # get 1 when task is done and task_end>0.5
-next_observations: (3, 240, 240) # current_image
-terminals: (1,) # get 1 when task is done and task_end>0.5
-tasks: (11,) # one-hot vector indication what kind of task it is
+observations: # current_image (3, 240, 240), robot_state(x,y,z,yaw,grippersttate) (6,)
+actions: # robot_action (x,y,z,yaw,gripper,task_terminal) (6,)
+rewards: # get 1 for completing the task and returning to the initial position.  (1,)
+next_observations: # current_image (3, 240, 240), robot_state (6,), task_id (10,)
+terminals: # get done for completing the task and returning to the initial position.  (1,)
+tasks: # one-hot vector which indicates the type of task (10,)
 ```
 
 ## Examples of transitions of each module to reach the goal state
