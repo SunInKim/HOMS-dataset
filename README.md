@@ -13,7 +13,7 @@ The dataset is composed of a dataset for high-level policy (task classifier) and
 
 ------------
 
-data link: https://drive.google.com/drive/folders/17LdN5XEarPH81re-2-bMEcZzkTaRVmHD?usp=sharing
+data link: https://koreaoffice-my.sharepoint.com/:f:/g/personal/jhj0630_korea_edu/EnGP9hFKsbVKmU1s_lQlDIAB2zMaeqnFRuXicRc84Mdcnw?e=klpUEj
 
 # Collection method
 The dataset is collected using pybullet simulator.
